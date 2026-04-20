@@ -40,7 +40,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'edu.teamrocket.App'
+    mainClass = 'edu.teamrocket.brunosbox.App'
 }
 
 tasks.named('test') {
