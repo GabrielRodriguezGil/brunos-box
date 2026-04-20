@@ -1,4 +1,4 @@
-package edu.badpals.brunosbox;
+package edu.teamrocket.brunosbox;
 
 import com.github.freva.asciitable.AsciiTable;
 
