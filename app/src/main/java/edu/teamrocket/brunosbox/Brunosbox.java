@@ -136,7 +136,7 @@ public class Brunosbox {
                  * como un número entero, no como un String.
                  */
 
-                KnockdownRound knockdownRound = new KnockdownRound("10 - 8");
+                KnockDownRound knockdownRound = new KnockDownRound("10 - 8");
                 System.out.println("\n\t knockdown round: " + knockdownRound.getRedBoxerScore() +
                                 " - " + knockdownRound.getBlueBoxerScore());
 
@@ -153,7 +153,7 @@ public class Brunosbox {
 
                 RegularRound regular = (RegularRound) RoundFactory.getRound("9 - 10");
                 System.out.println("\t regular round: " + regular);
-                KnockdownRound knockdown = (KnockdownRound) RoundFactory.getRound("8 - 10");
+                KnockDownRound knockdown = (KnockDownRound) RoundFactory.getRound("8 - 10");
                 System.out.println("\t knockdown round: " + knockdown);
 
                 /*
