@@ -3,10 +3,9 @@ package edu.teamrocket.brunosbox;
 class KnockDownRound implements Round {
     
     private final String roundScore;
-
     private byte redBoxerScore;
-
     private byte blueBoxerScore;
+    
 
     KnockDownRound(String roundScore){
         this.roundScore = roundScore.replaceAll("\\s", "");
