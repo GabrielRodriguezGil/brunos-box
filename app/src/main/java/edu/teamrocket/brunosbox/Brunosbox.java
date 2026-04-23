@@ -1,6 +1,6 @@
 package edu.teamrocket.brunosbox;
 
-import com.github.freva.asciitable.AsciiTable;
+import com.github.freva.asciitable.*;
 
 public class Brunosbox {
         public static void main(String[] args) {
@@ -67,8 +67,8 @@ public class Brunosbox {
                  * Rocky Balboa (red) vs Apollo Creed (blue)
                  */
 
-                whiteScoreCard.setRCorner("Rocky Balboa");
-                whiteScoreCard.setBCorner("Apollo Creed");
+                whiteScoreCard.setRedCorner("Rocky Balboa");
+                whiteScoreCard.setBlueCorner("Apollo Creed");
 
                 /*
                  * Muestra la tarjeta por consola con
@@ -180,8 +180,8 @@ public class Brunosbox {
                  */
 
                 ScoreCard blueScoreCard = new ScoreCard("BLUE");
-                blueScoreCard.setRCorner("Rocky Balboa");
-                blueScoreCard.setBCorner("Apollo Creed");
+                blueScoreCard.setRedCorner("Rocky Balboa");
+                blueScoreCard.setBlueCorner("Apollo Creed");
 
                 blueScoreCard.loadJudgeScoreCard(data[1]);
                 System.out.println(blueScoreCard);
@@ -250,8 +250,8 @@ public class Brunosbox {
                  */
 
                 ScoreCard pinkScoreCard = new ScoreCard("PINK");
-                pinkScoreCard.setRCorner("Rocky Balboa");
-                pinkScoreCard.setBCorner("Apollo Creed");
+                pinkScoreCard.setRedCorner("Rocky Balboa");
+                pinkScoreCard.setBlueCorner("Apollo Creed");
 
                 pinkScoreCard.loadJudgeScoreCard(data[2]);
                 System.out.println(pinkScoreCard);
