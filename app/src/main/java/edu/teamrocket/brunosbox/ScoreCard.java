@@ -11,8 +11,8 @@ public class ScoreCard {
     private String redCorner = "";
     private String blueCorner = "";
     private String[] judgeScoreCard;
-    private Byte redCornerFinalScore;
-    private Byte blueCornerFinalScore;
+    private Byte redCornerFinalScore = 0;
+    private Byte blueCornerFinalScore = 0;
 
     private List<Round> rounds = new ArrayList<Round>();
 
