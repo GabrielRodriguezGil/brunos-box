@@ -1,7 +1,6 @@
 package edu.teamrocket.brunosbox;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -70,9 +69,9 @@ public class ScoreCardTest {
     @Test
     public void getBoxerFinalScoreTest() {
         assertEquals(0, card.getRedCornerFinalScore());
-        assertEquals(0, card.getBlueCornerFinalScore());
+        assertEquals(0, (int) card.getBlueCornerFinalScore());
         card.loadJudgeScoreCard(whiteScoreCard);
         assertEquals(94, card.getRedCornerFinalScore());
-        assertEquals(96, card.getBlueCornerFinalScore());
+        assertEquals(96, (int) card.getBlueCornerFinalScore());
     }
 }
