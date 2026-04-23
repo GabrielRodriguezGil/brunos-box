@@ -42,7 +42,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'edu.teamrocket.brunosbox.App'
+    mainClass = 'edu.teamrocket.brunosbox.Brunosbox'
 }
 
 tasks.named('test') {
@@ -54,7 +54,7 @@ tasks.named('test') {
 
 jar {
     manifest {
-        attributes 'Main-Class' : 'edu.teamrocket.App',
+        attributes 'Main-Class' : 'edu.teamrocket.brunosbox.Brunosbox',
                    'Package-Title' : 'Brunos-box',
                    'Package-Version': '1.0',
                    'Package-Vendor' : 'gabrielrodgil088@gmail.com',
