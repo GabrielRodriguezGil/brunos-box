@@ -26,6 +26,8 @@ dependencies {
     
     errorprone 'com.google.errorprone:error_prone_core:2.28.0'
 
+    implementation group: 'com.github.freva', name: 'ascii-table', version: '1.8.0'
+
 
     // This dependency is used by the application.
     implementation libs.guava
@@ -40,7 +42,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'edu.teamrocket.App'
+    mainClass = 'edu.teamrocket.brunosbox.Brunosbox'
 }
 
 tasks.named('test') {
@@ -50,9 +52,22 @@ tasks.named('test') {
     finalizedBy jacocoTestReport
 }
 
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class' : 'edu.teamrocket.brunosbox.Brunosbox',
+                   'Package-Title' : 'Brunosbox',
+                   'Package-Version': '1.0',
+                   'Package-Vendor' : 'gabrielrodgil088@gmail.com',
+                   'Specification-Title' : 'Brunos-box'
+    }
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    from { configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
 jar {
     manifest {
-        attributes 'Main-Class' : 'edu.teamrocket.App',
+        attributes 'Main-Class' : 'edu.teamrocket.brunosbox.Brunosbox',
                    'Package-Title' : 'Brunos-box',
                    'Package-Version': '1.0',
                    'Package-Vendor' : 'gabrielrodgil088@gmail.com',
