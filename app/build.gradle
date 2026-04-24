@@ -52,6 +52,19 @@ tasks.named('test') {
     finalizedBy jacocoTestReport
 }
 
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class' : 'edu.teamrocket.brunosbox.Brunosbox',
+                   'Package-Title' : 'Brunosbox',
+                   'Package-Version': '1.0',
+                   'Package-Vendor' : 'gabrielrodgil088@gmail.com',
+                   'Specification-Title' : 'Brunos-box'
+    }
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    from { configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
 jar {
     manifest {
         attributes 'Main-Class' : 'edu.teamrocket.brunosbox.Brunosbox',
