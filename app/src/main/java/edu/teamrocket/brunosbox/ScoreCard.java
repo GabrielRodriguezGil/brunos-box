@@ -71,17 +71,22 @@ public class ScoreCard {
 
     @Override
     public String toString() {
-        return "\n\t\t\t   " + this.color
-                + "\n\t\t" + this.blueCorner
-                + "\t" + this.redCorner
-                + "\n\t\t\t"
-                + this.getNumRounds() + " rounds\n"
-                + this.viewRounds()
-                + "\n\t FINAL SCORE: "
-                + this.getRedCornerFinalScore()
-                + " - "
-                + this.getBlueCornerFinalScore()
-                + " FINAL SCORE";
+        return """
+                
+                \t\t\t  %s
+                \t\t%s\t%s
+                \t\t\t%s rounds
+                %s
+                \t  FINAL SCORE: %s - %s FINAL SCORE
+                """.formatted(
+                    this.color,
+                    this.blueCorner,
+                    this.redCorner,
+                    this.getNumRounds(),
+                    this.viewRounds(),
+                    this.getRedCornerFinalScore(),
+                    this.getBlueCornerFinalScore()
+                );
     }
 
     public void loadJudgeScoreCard(String[] judgeScoreCard) {
