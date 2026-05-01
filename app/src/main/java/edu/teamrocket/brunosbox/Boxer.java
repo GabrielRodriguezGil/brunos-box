@@ -2,7 +2,7 @@ package edu.teamrocket.brunosbox;
 
 enum Boxer {
     RED((byte)0),
-    BLUE((byte)0);
+    BLUE((byte)1);
 
     private final byte corner;
 
