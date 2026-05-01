@@ -1,39 +1,30 @@
 package edu.teamrocket.brunosbox;
 
-class RegularRound implements Round {
+record RegularRound(String roundScore, byte redBoxerScore, byte blueBoxerScore) implements Round {
+    // la clase es portador de datos inmutables 
+    // tras la construcción: candidata a record
 
-    private final String roundScore;
-    private byte redBoxerScore;
-    private byte blueBoxerScore;
+    // Constructor canónico compacto: valida
+    RegularRound {
+        if (roundScore == null) throw new IllegalArgumentException("roundScore null");
+    }
 
     RegularRound(String roundScore) {
-        this.roundScore = roundScore.replaceAll("\\s", "");
-        this.parseRounds();
+        this ( // invoca al constructor canónico compacto
+            roundScore.replaceAll("\\s", ""), // acaba en this.roundScore
+            parseBoxerRoundScore(roundScore, Boxer.RED), // acaba en this.redBoxerScore
+            parseBoxerRoundScore(roundScore, Boxer.BLUE) // acaba en this.blueBoxerScore
+        );
     }
 
-    private void parseRounds() {
-        String[] scores = getRoundScore().split("-", 2);
-        this.blueBoxerScore = Byte.parseByte(scores[1]);
-        this.redBoxerScore = Byte.parseByte(scores[0]);
-    }
-
-    public String getRoundScore() {
-        return roundScore;
-    }
-
-    @Override
-    public byte getRedBoxerScore() {
-        return this.redBoxerScore;
-    }
-
-    @Override
-    public byte getBlueBoxerScore() {
-        return this.blueBoxerScore;
+    private static Byte parseBoxerRoundScore(String roundScore, Boxer boxer) {
+        String[] scores = roundScore.replaceAll("\\s", "").split("-", 2);
+        return Byte.parseByte(scores[boxer.corner()]);
     }
 
     @Override
     public String toString() {
-        return this.getRedBoxerScore() + " - " + this.getBlueBoxerScore();
+        return redBoxerScore() + " - " + blueBoxerScore();
     }
 
 }
