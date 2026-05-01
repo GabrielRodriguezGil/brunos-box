@@ -9,21 +9,21 @@ public class RegularRoundTest {
     @Test
     public void replaceTest() {
         RegularRound round = new RegularRound("10 - 9");
-        assertEquals(round.getRoundScore(), "10-9");
+        assertEquals(round.roundScore(), "10-9");
     }
 
     @Test
     public void roundScoreToIntTest() {
         RegularRound round = new RegularRound("10 - 9");
-        assertEquals(round.getRoundScore(), "10-9");
-        assertEquals(10, round.getRedBoxerScore());
-        assertEquals(9, round.getBlueBoxerScore());
+        assertEquals(round.roundScore(), "10-9");
+        assertEquals(10, round.redBoxerScore());
+        assertEquals(9, round.blueBoxerScore());
     }
 
     @Test // este para el alumnado
     public void boxerRoundScoreToIntTest() {
         RegularRound round = new RegularRound("10 - 9");
-        assertEquals(10, round.getRedBoxerScore());
-        assertEquals(9, round.getBlueBoxerScore());
+        assertEquals(10, round.redBoxerScore());
+        assertEquals(9, round.blueBoxerScore());
     }
 }

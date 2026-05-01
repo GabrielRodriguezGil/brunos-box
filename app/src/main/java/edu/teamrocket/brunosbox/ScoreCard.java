@@ -56,15 +56,15 @@ public class ScoreCard {
 
         for (Round round : this.rounds) {
             roundsView.append("\n\t")
-                    .append(round.getRedBoxerScore())
+                    .append(round.redBoxerScore())
                     .append("\t\s")
-                    .append(redBoxerScoreTotal += round.getRedBoxerScore())
+                    .append(redBoxerScoreTotal += round.redBoxerScore())
                     .append("\t\s\s")
                     .append(roundNum++)
                     .append("\t\s")
-                    .append(blueBoxerScoreTotal += round.getBlueBoxerScore())
+                    .append(blueBoxerScoreTotal += round.blueBoxerScore())
                     .append("\t\s")
-                    .append(round.getBlueBoxerScore());
+                    .append(round.blueBoxerScore());
         }
         return roundsView.toString();
     }
@@ -101,7 +101,7 @@ public class ScoreCard {
 
     public Byte getBlueCornerFinalScore() {
         if (this.blueCornerFinalScore == 0) {
-            this.blueCornerFinalScore = this.getRounds().stream().map(Round::getBlueBoxerScore).map(Byte::intValue)
+            this.blueCornerFinalScore = this.getRounds().stream().map(Round::blueBoxerScore).map(Byte::intValue)
                     .reduce(0, Integer::sum).byteValue();
         }
 
@@ -112,7 +112,7 @@ public class ScoreCard {
         if (this.redCornerFinalScore == 0) {
             this.redCornerFinalScore = this.getRounds()
                     .stream()
-                    .map(Round::getRedBoxerScore)
+                    .map(Round::redBoxerScore)
                     .map(Byte::intValue)
                     .reduce(0, Integer::sum)
                     .byteValue();
